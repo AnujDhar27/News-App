@@ -1,0 +1,41 @@
+<ion-content>
+  <h4 text-center margin-top>Welcome To NewsPulse</h4>
+
+  <div class="username">
+    <ion-input
+      label="Username"
+      placeholder="Enter your registered phone number"
+      type="number"
+      labelPlacement="floating"
+      [(ngModel)]="phoneNumber"
+      errorText="Invalid Phone Number"
+      fill="solid"
+      pattern="[789]\d{9}"
+      maxlength="10"
+    ></ion-input>
+  </div>
+  <div class="password">
+    <ion-input
+      label="Password"
+      placeholder="Enter Password"
+      type="password"
+      labelPlacement="floating"
+      [(ngModel)]="password"
+      fill="solid"
+    ></ion-input>
+  </div>
+  <div class="buttons">
+    <ion-button shape="round" size="small" fill="solid" (click)="signIn()"
+      >SIGN IN</ion-button
+    >
+    <ion-button size="small" shape="round" fill="solid" (click)="NavToSignUp()"
+      >SIGN UP</ion-button
+    >
+  </div>
+  <ion-toast
+    [isOpen]="isToastOpen"
+    message="Please check the details entered."
+    [duration]="5000"
+    (didDismiss)="setOpen(false)"
+  ></ion-toast>
+</ion-content>

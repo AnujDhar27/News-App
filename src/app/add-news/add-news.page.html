@@ -1,0 +1,73 @@
+<ion-content>
+  <h4 text-center margin-top>Add Article For News</h4>
+  <div class="select">
+    <ion-item>
+      <ion-select
+        label="News Category"
+        label-placement="floating"
+        [(ngModel)]="cat"
+      >
+        <ion-select-option value="World">World</ion-select-option>
+        <ion-select-option value="Science">Science</ion-select-option>
+        <ion-select-option value="Sports">Sports</ion-select-option>
+        <ion-select-option value="Environment">Environment</ion-select-option>
+        <ion-select-option value="Fashion">Fashion</ion-select-option>
+        <ion-select-option value="Business">Business</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+  <div class="headline">
+    <ion-input
+      label="Headline"
+      placeholder="Enter headline for your article"
+      labelPlacement="floating"
+      fill="solid"
+      [(ngModel)]="headline"
+    ></ion-input>
+  </div>
+
+  <div class="desc">
+    <ion-textarea
+      label="Description"
+      placeholder="Write the description of your article"
+      fill="solid"
+      labelPlacement="floating"
+      [(ngModel)]="desc"
+    ></ion-textarea>
+  </div>
+  <div class="image">
+    <ion-input
+      label="Image"
+      placeholder="Enter base64 image string"
+      labelPlacement="floating"
+      fill="solid"
+      [(ngModel)]="image"
+    ></ion-input>
+  </div>
+  <div class="captured-by">
+    <ion-input
+      label="Captured By"
+      placeholder="Enter the name who captured the image"
+      labelPlacement="floating"
+      fill="solid"
+      [(ngModel)]="captured"
+    ></ion-input>
+  </div>
+  <ion-button shape="round" size="small" fill="solid" (click)="submit()"
+    >Submit</ion-button
+  >
+  <!-- <ion-alert
+    [isOpen]="isAlertOpen"
+    header="Submit Error!"
+    subHeader="An error occured while submitting your news article."
+    message="Please fill in all the details."
+    [buttons]="alertButtons"
+    (didDismiss)="setOpen(false)"
+  ></ion-alert> -->
+  <ion-toast
+    [isOpen]="isToastOpen"
+    message="Please Fill in all the details"
+    [duration]="5000"
+    (didDismiss)="setOpen(false)"
+  ></ion-toast>
+</ion-content>

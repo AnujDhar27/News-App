@@ -1,0 +1,100 @@
+<ion-content>
+  <h4>Welcome To NewsPulse</h4>
+  <h3>Create your account</h3>
+  <div class="phn">
+    <ion-item>
+      <ion-input
+        label="Phone Number"
+        placeholder="Enter your phone number"
+        type="number"
+        labelPlacement="floating"
+        [(ngModel)]="phoneNumber"
+        errorText="Invalid Phone Number"
+        fill="solid"
+        pattern="[789]\d{9}"
+        maxlength="10"
+      ></ion-input>
+    </ion-item>
+  </div>
+
+  <ion-item>
+    <ion-input
+      label="First Name"
+      placeholder="Enter your First Name"
+      labelPlacement="floating"
+      [(ngModel)]="firstName"
+      fill="solid"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      label="Last Name"
+      placeholder="Enter your Last Name"
+      labelPlacement="floating"
+      [(ngModel)]="lastName"
+      fill="solid"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      label="Email"
+      placeholder="Enter your Email ID"
+      labelPlacement="floating"
+      [(ngModel)]="email"
+      type="email"
+      fill="solid"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      label="Birth Date"
+      placeholder="Select your Birth Date"
+      labelPlacement="floating"
+      type="date"
+      [(ngModel)]="birthDate"
+      fill="solid"
+      max="{{getDate()}}"
+    ></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      label="Address"
+      placeholder="Enter your address"
+      [(ngModel)]="address"
+      labelPlacement="floating"
+      fill="solid"
+    ></ion-input>
+  </ion-item>
+  <h5>Select Gender</h5>
+  <div class="genderSelect">
+    <ion-radio-group [(ngModel)]="selectedGender">
+      <ion-item>
+        <ion-label>Male</ion-label>
+        <ion-radio value="M"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Female</ion-label>
+        <ion-radio value="F"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Others</ion-label>
+        <ion-radio value="O"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </div>
+
+  <div class="buttons">
+    <ion-button shape="round" size="small" fill="solid" (click)="signIn()"
+      >SIGN IN</ion-button
+    >
+    <ion-button size="small" shape="round" fill="solid" (click)="signUp()"
+      >SIGN UP</ion-button
+    >
+  </div>
+</ion-content>

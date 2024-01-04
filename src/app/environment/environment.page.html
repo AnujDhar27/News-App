@@ -1,0 +1,50 @@
+<ion-content>
+  <div><h4 text-center margin-top>DashBoard</h4></div>
+  <ion-header>
+    <ion-toolbar>
+      <ion-segment
+        [(ngModel)]="selectedSegment"
+        (ionChange)="segmentChanged($event)"
+        [scrollable]="true"
+        value="Environment"
+      >
+        <ion-segment-button value="dashboard">
+          <ion-label>World</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="science">
+          <ion-label>Science</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="sports">
+          <ion-label>Sports</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="environment">
+          <ion-label>Environment</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="fashion">
+          <ion-label>Fashion</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="business">
+          <ion-label>Business</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card *ngFor="let news of newsArray">
+    <img alt="News" data-src="{{news.nm_image_new}}" />
+    <ion-card-header>
+      <ion-card-title>{{news.nm_heading}}</ion-card-title>
+      <ion-card-subtitle>{{news.nm_captured_by}}</ion-card-subtitle>
+      <ion-card-content>{{news.nm_description}}</ion-card-content>
+    </ion-card-header>
+  </ion-card>
+  <ion-fab
+    slot="fixed"
+    vertical="bottom"
+    horizontal="end"
+    *ngIf="phn===7044290576"
+  >
+    <ion-fab-button (click)="fab(phn)">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
